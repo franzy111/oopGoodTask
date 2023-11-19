@@ -14,4 +14,11 @@ public interface Person extends Positioned {
      * @param destination место назначения
      */
     void walk(Position destination);
+
+    /**
+     * Выбор транспорта в зависимости от местаположения
+     * @param destination
+     * @return
+     */
+    Transport chooseTransport(Position destination);
 }

@@ -1,5 +1,7 @@
 package ru.oop;
 
+import ru.oop.Transport;
+
 /**
  * <b>Задача 2:</b><br>
  * Добраться человеку до заданного места.<br>
@@ -38,7 +40,12 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        // TODO
+        Transport transport = person.chooseTransport(destination);
+        if (transport.getPosition() != person.getPosition())
+            person.walk(transport.getPosition()); // дойти до остановки
+        transport.driveToNear(destination);
+        if (person.getPosition() != destination)
+            person.walk(destination);
         assert person.getPosition() == destination;
     }
 }
