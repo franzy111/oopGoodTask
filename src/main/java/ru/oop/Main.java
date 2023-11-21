@@ -41,11 +41,9 @@ public class Main {
      */
     public static void moveTo(Person person, Position destination) {
         Transport transport = person.chooseTransport();
-        if (transport.getPosition() != person.getPosition())
-            person.walk(transport.getPosition()); // дойти до остановки
+        person.walk(transport.getPosition()); // дойти до остановки
         transport.driveToNear(destination);
-        if (person.getPosition() != destination)
-            person.walk(destination);
+        person.walk(destination);
         assert person.getPosition() == destination;
     }
 }
