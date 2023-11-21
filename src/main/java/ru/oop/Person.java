@@ -17,8 +17,7 @@ public interface Person extends Positioned {
 
     /**
      * Выбор транспорта в зависимости от места назначения
-     * @param destination
      * @return
      */
-    Transport chooseTransport(Position destination);
+    Transport chooseTransport();
 }

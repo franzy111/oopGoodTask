@@ -40,7 +40,7 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        Transport transport = person.chooseTransport(destination);
+        Transport transport = person.chooseTransport();
         if (transport.getPosition() != person.getPosition())
             person.walk(transport.getPosition()); // дойти до остановки
         transport.driveToNear(destination);
