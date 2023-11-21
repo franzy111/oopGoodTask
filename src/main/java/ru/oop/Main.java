@@ -23,8 +23,7 @@ public class Main {
     public static void moveTo(Person person, Position destination) {
         Car car = new Car(person);
         car.driveToNear(destination);
-        if (person.getPosition() != destination)
-            person.walk(destination);
+        person.walk(destination);
         assert person.getPosition() == destination;
     }
 }
